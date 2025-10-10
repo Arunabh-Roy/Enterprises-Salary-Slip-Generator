@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Salary Slip Generator - Pioneer Enterprises (India) Pvt. Ltd.</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="favicon.png" rel="icon">
+  <!-- XLSX for reading Excel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <!-- html2canvas for rendering HTML to canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <!-- jsPDF for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="logo.png" alt="Pioneer Enterprises (India) Pvt. Ltd. Logo" class="logo" />
+      <h1>Pioneer Enterprises (India) Pvt. Ltd.<br>Salary Slip Generator</h1>
+    </header>
+
+    <section class="controls">
+      <div id="dropZone" class="drop-zone">
+        <p id="dropZoneText"><i class="fas fa-upload"></i> Drag & Drop your Excel file here or click to upload</p>
+        <input type="file" id="fileInput" accept=".xlsx,.xls" style="display:none;"/>
+      </div>
+      <div class="input-actions">
+        <input type="text" id="nameInput" placeholder="Enter Employee Name / Employee ID" />
+
+          <!-- ✅ New Filter Bar -->
+          <div class="filter-bar">
+            <select id="sheetDropdown">
+              <option value="">-- Select Sheet (Optional) --</option>
+            </select>
+            <select id="deptDropdown">
+              <option value="">-- Select Department (Optional) --</option>
+            </select>
+          </div>
+
+        <div class="button-group">
+          <button onclick="downloadPDF()">
+            <i class="fas fa-file-pdf"></i> Download This Payslip
+          </button>
+          <button onclick="downloadAllPDFs()">
+            <i class="fas fa-file-archive"></i> Download All Payslips
+          </button>
+          <button onclick="downloadSelectedPDFs()">
+            <i class="fas fa-file-pdf"></i> Download Selected Slips
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    <div id="loader" style="display: none; text-align: center; margin-top: 20px;">
+      <p style="font-size: 18px;">Generating all salary slips, Please wait...</p>
+    </div>
+
+    <p id="errorMessage" class="error"></p>
+
+    <div id="slipContainer" style="display: none;">
+      <div id="salarySlip" class="slip-box"></div>
+    </div>
+  </div>
+
+  <!-- Link JS -->
+  <script src="script.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,209 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+#loader {
+  color: #1d72b8;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+input[type="file"],
+input[type="text"] {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  width: 80%;
+  font-size: 16px;
+}
+
+button {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #1d72b8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+select {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 14px;
+  width: 82%;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d72b8;
+  background-color: #fff;
+  border: 2px solid #1d72b8;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  appearance: none; /* Remove default arrow */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%231d72b8' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px;
+}
+
+select:hover {
+  border-color: #155a96;
+  background-color: #f0f8ff;
+}
+
+select:focus {
+  outline: none;
+  border-color: #104e82;
+  box-shadow: 0 0 5px rgba(29, 114, 184, 0.6);
+}
+
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;         /* space between dropdowns */
+  margin: 10px auto;
+  width: 82%;        /* aligns with input width */
+}
+
+.filter-bar select {
+  flex: 1;           /* equal width for both */
+  min-width: 160px;  /* ensures they don’t get too small */
+}
+
+/* Drop Zone Container */
+.drop-zone {
+  border: 2px dashed #1d72b8;
+  border-radius: 8px;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding: 30px;
+  text-align: center;
+  color: #555;
+  cursor: pointer;
+  margin-bottom: 20px;
+  background: #fafafa;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+/* Hover/Drag Over Effect */
+.drop-zone.dragover {
+  background: #e3f2fd;
+  border-color: #155a96;
+}
+
+#dropZoneText {
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#dropZoneText i {
+  font-size: 18px;
+}
+
+#removeFileBtn {
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  color: #e74c3c;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  /* Flex for perfect centering */
+  display: absolute;
+  align-items: center;
+  justify-content: right;
+
+  font-size: 16px;
+  line-height: 1;
+  padding: 0; /* Remove extra space */
+}
+
+#removeFileBtn i {
+  position: relative;
+  left: 3px; /* Moves the icon slightly to the right */
+}
+
+#removeFileBtn:hover {
+  background: #f0f0f0;
+  color: #c0392b;
+}
+
+.file-display {
+  display: absolute;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+button i {
+  margin-right: 8px;
+}
+
+.button-group {
+  text-align: center;
+}
+
+button:hover {
+  background-color: #155a96;
+  transform: translateY(-1px);
+}
+
+button:active {
+  background-color: #104e82;
+  transform: translateY(1px);
+}
+
+.slip-box {
+  background: #fff;
+  padding: 30px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+table td, table th {
+  height: 25px;       /* fixed height for all cells */
+  vertical-align: left; /* centers text vertically */
+  padding: 4.5px 5px;   /* keep it compact */
+  box-sizing: border-box;
+}
