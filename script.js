@@ -141,7 +141,16 @@ function handleFileUpload(e) {
                 emp["Date of Joining"] = !isNaN(doj) ? formatExcelDate(doj) : formatNormalDate(doj);
             }
             Object.keys(emp).forEach(key => {
-                if (typeof emp[key] === "number") emp[key] = Math.round(emp[key]);
+              if (typeof emp[key] === "number") {
+            
+                // ❌ Do NOT round Present Days
+                if (key === "Present Days") {
+                  emp[key] = Number(emp[key]); // keep as-is (29.5 stays 29.5)
+                } else {
+                  emp[key] = Math.round(emp[key]); // round salary-related values
+                }
+            
+              }
             });
             return emp;
         });
